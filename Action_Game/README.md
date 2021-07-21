@@ -1,6 +1,6 @@
 # ACTION GAME
 
-<kbd>![Action](/Capture/Action.gif "Action")</kbd> </br>
+<kbd>[![Action](/Capture/Action.gif "Action")](https://github.com/kg4543/StudyUnity/tree/main/Action_Game/Assets/Script)</kbd> </br>
 
 ## CAMERA
 
