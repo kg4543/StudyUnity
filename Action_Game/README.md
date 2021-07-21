@@ -285,3 +285,5 @@ void Update()
     }
 ```
 - Boss의 바위 공격은 회전 및 크기 확대 Animation 지정
+
+참고 자료 : https://www.youtube.com/channel/UCw_N-Q_eYJo-IJFbNkhiYDA </br>
