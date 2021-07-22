@@ -6,7 +6,7 @@
 
 - '쿼터 뷰'로써 메인카메라가 플레이어 상공에서 플레이어를 따라 다닌다. 
 - 서브 카메라의 경우 플레이어가 보고 있는 시점을 하단에 설정하여 보여 준다. (LookAt 사용)
-```
+```C#
     public Transform target; //Player 설정
     public Vector3 offset; //Player와 카메라 사이의 간견 설정
     float rotationX = 0.0f;
@@ -34,7 +34,7 @@ void Update()
 - 기본 행동 : 전방위 이동 / 점프 / 구르기 / 무기 교체
 - 각 행동은 bool값을 설정하여 동시에 여러 행동이 안되도록 방지
 - anime.SetBool(상태)와 anime.SetTrigger(상황)로 animation 동작
-```
+```C#
 void Jump()
     {
         if (cDown && !isJump && !isDodge)
@@ -48,7 +48,7 @@ void Jump()
 ```
 - Bool형 배열을 통해 무기 소지 여부 판단
 - 무기 배열을 통해 index 값으로 무기 구분 및 무기 교체
-```
+```C#
 void Swap()
     {
         if (sDown1) weaponIndex = 0;
@@ -86,7 +86,7 @@ void Swap()
 
 - 무기 종류(근접 / 단발 / 연발)에 공격 이벤트 지정
 - 공격 시 공격 범위 및 이펙트 효과 활성화 (Coroutine 사용)
-```
+```C#
 public void Use()
     {
         if (type == WeaponType.Malee)
@@ -123,7 +123,7 @@ public void Use()
 
 - 'Player'와 충돌 이벤트 범위 및 'Ground' 및 'Wall'에서 물리적으로 구분되는 범위 지정
 - 'Player'에서 'ITEM' 충돌 시 이벤트 활성
-```
+```C#
 private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Item")
@@ -180,7 +180,7 @@ private void OnTriggerEnter(Collider other)
 (Click the Image) </br>
 
 - 타입별 공격 Animation 지정
-```
+```C#
 IEnumerator Attack()
     {
         isChase = false;
@@ -232,7 +232,7 @@ IEnumerator Attack()
 - 사망 시  Animaion 및 일정 시간 뒤 객체 소멸
 - Boss의 경우 Player 위치를 지속적으로 파악 / Random하게 공격 Animation이 활성화
 
-```
+```C#
 void Update()
     {
         if (isDead)
@@ -278,7 +278,7 @@ void Update()
     }
 ```
 - Boss의 미사일 공격은 유도 기능 탑재 (NavMeshAgent 활용)
-```
+```C#
 void Update()
     {
         nav.SetDestination(target.position);
